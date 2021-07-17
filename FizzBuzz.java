@@ -10,9 +10,9 @@ public class FizzBuzz{
         
         while (n<1 || n>=200000){
             if (n<=0)
-            System.out.println("Number must be bigger than 0!");
+                System.out.println("Number must be bigger than 0!");
             else
-            System.out.println("Number must be less than 200000!");  
+                System.out.println("Number must be less than 200000!");  
 
             System.out.print("Enter a number: "); 
             n = sc.nextInt();  

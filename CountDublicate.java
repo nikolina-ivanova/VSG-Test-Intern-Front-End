@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class CountDublicate {
@@ -11,9 +10,9 @@ public class CountDublicate {
 
         while (n<3 || n>1000){
             if (n<3)
-            System.out.print("Enter size of array bigger than 2: ");
+                System.out.print("Enter size of array bigger than 2: ");
             else
-            System.out.print("Enter size of array less than 1001: ");  
+                System.out.print("Enter size of array less than 1001: ");  
             n = sc.nextInt();  
         }
 
@@ -27,25 +26,24 @@ public class CountDublicate {
                 numbers[i] = sc.nextInt();
             }
         }
-        
-        Arrays.sort(numbers);
+
+        int counter=0;
         int dublicate=0;
         for (int i=0; i<n; i++){
-            int counter=0;
-
-            for(int y=i+1; y<n; y++){
-                if(numbers[i]==numbers[y])
-                counter++;
-                else {
-                    i=y-1;
-                    break;
+            counter=0;
+            if(numbers[i]!=0){
+                for(int y=i+1; y<n; y++){
+                    if(numbers[i]==numbers[y]){
+                        counter++;
+                        numbers[y]=0;
+                    }
                 }
+                if(counter>0)
+                    dublicate++;
             }
-            if(counter>0)
-            dublicate++;
         }  
-
         System.out.println(dublicate); 
+
         sc.close(); 
     }
 }
